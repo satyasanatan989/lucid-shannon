@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="allows_for_sync_witch_youtube">Tala: Ito ay pumapayag mag sync sa Youtube Music. HINDI PWEDE ibahin to mamaya.</string>
+    <string name="already_in_playlist">Nasa playlist na:</string>
+    <string name="cached_playlist">Nakacache</string>
+    <string name="cancel">Kanselahin</string>
+    <string name="dislike_all">Idislike lahat</string>
+    <string name="like_all">Ilike lahat</string>
+    <string name="liked">Nagustuhan</string>
+    <string name="link_copied">Kinopya ang link sa clipboard</string>
+    <string name="more_options">Masmadaming opsyon</string>
+    <string name="my_top">Aking nangunguna</string>
+    <string name="offline">Nadownload</string>
+    <string name="remove_from_cache">Tinanggal mula sa cache</string>
+    <string name="select">Piliin lahat</string>
+    <string name="sort_by_last_updated">Petsa ng huling update</string>
+    <string name="uploaded_playlist">Naka upload</string>
+</resources>

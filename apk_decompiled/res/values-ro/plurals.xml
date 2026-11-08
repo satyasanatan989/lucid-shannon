@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="n_song">
+        <item quantity="other">%d de melodii</item>
+        <item quantity="one">%d melodie</item>
+        <item quantity="few">%d melodii</item>
+    </plurals>
+</resources>

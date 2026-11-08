@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="n_song">
+        <item quantity="other">%d שירים</item>
+        <item quantity="one">שיר %d</item>
+        <item quantity="two">%d שירים</item>
+    </plurals>
+</resources>

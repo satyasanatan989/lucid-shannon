@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How the Internet Actually Works - Code-to-Video Studio</title>
+  <link rel="stylesheet" href="../src/style.css">
+</head>
+<body>
+
+  <!-- Studio Stage Wrapper -->
+  <div id="studio-wrapper">
+    <div id="stage-container">
+      
+      <!-- Dynamic SVG Filter for Paper Grain Texture -->
+      <svg style="position: absolute; width: 0; height: 0;">
+        <filter id="paper-texture-filter">
+          <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" result="noise" />
+          <feDiffuseLighting in="noise" lighting-color="#FFFDF5" surfaceScale="1.4" result="light">
+            <feDistantLight azimuth="55" elevation="65" />
+          </feDiffuseLighting>
+          <feBlend mode="multiply" in="SourceGraphic" in2="light" />
+        </filter>
+      </svg>
+
+      <!-- Background Canvas (Paper Texture & Gradients) -->
+      <canvas id="paper-bg-canvas" class="paper-canvas" width="1080" height="1920"></canvas>
+
+      <!-- Notebook Center Crease -->
+      <div class="notebook-spine"></div>
+
+      <!-- Notebook Binder Punches (Left Margin) -->
+      <div class="binder-holes">
+        <div class="binder-hole"></div>
+        <div class="binder-hole"></div>
+        <div class="binder-hole"></div>
+        <div class="binder-hole"></div>
+      </div>
+
+      <!-- Main Animated Content Layer -->
+      <div class="content-layer">
+        
+        <!-- SCENE 1: The Cloud Illusion (0s - 8s) -->
+        <section id="scene-1" class="scene active">
+          <div class="caption-pill">CHAPTER 01 · THE ILLUSION</div>
+          <div class="headline-wrap">
+            <div class="headline-sub">YOU THINK THE INTERNET IS IN</div>
+            <div class="headline-main">THE CLOUD</div>
+          </div>
+          
+          <div class="visual-stage" style="position: relative; width: 840px; height: 1100px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <!-- Paper Cloud Cutout -->
+            <svg id="s1-cloud" width="620" height="380" viewBox="0 0 620 380" style="filter: var(--paper-cutout-filter); transform-origin: center center;">
+              <path d="M 120 280 C 80 280 40 250 40 200 C 40 150 80 130 110 130 C 130 70 200 40 280 50 C 350 20 440 50 470 120 C 530 110 580 150 580 210 C 580 270 530 280 490 280 Z" 
+                    fill="#FAF7EE" stroke="#E2DAC4" stroke-width="4"/>
+              <!-- Paper Cloud Accent Creases -->
+              <path d="M 180 180 Q 240 140 310 170" fill="none" stroke="#E6DECB" stroke-width="4" stroke-linecap="round"/>
+              <path d="M 370 150 Q 430 130 480 160" fill="none" stroke="#E6DECB" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+
+            <!-- Dashed Signal Waves (Motion Canvas Style) -->
+            <svg id="s1-signals" width="300" height="240" viewBox="0 0 300 240" style="margin: 20px 0;">
+              <path class="signal-arc" d="M 50 80 Q 150 20 250 80" fill="none" stroke="#E23D26" stroke-width="6" stroke-dasharray="14 12" stroke-linecap="round"/>
+              <path class="signal-arc" d="M 80 130 Q 150 80 220 130" fill="none" stroke="#E23D26" stroke-width="6" stroke-dasharray="14 12" stroke-linecap="round"/>
+              <path class="signal-arc" d="M 110 180 Q 150 140 190 180" fill="none" stroke="#E23D26" stroke-width="6" stroke-dasharray="14 12" stroke-linecap="round"/>
+            </svg>
+
+            <!-- Smartphone Cutout -->
+            <div id="s1-phone" style="width: 200px; height: 360px; background: #2B2824; border-radius: 36px; padding: 14px; box-shadow: var(--paper-shadow-lg); border: 4px solid #DFD5BD; position: relative;">
+              <div style="width: 100%; height: 100%; background: #FAF6EA; border-radius: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+                <div style="font-family: 'Bebas Neue'; font-size: 32px; color: #E23D26; letter-spacing: 0.05em;">TAP TO SEND</div>
+                <div style="width: 60px; height: 60px; background: #E23D26; border-radius: 50%; margin-top: 14px; display: flex; align-items: center; justify-content: center;">
+                  <span style="color: #fff; font-size: 26px;">↑</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SCENE 2: The Ocean Reveal (8s - 18s) -->
+        <section id="scene-2" class="scene">
+          <div class="caption-pill">CHAPTER 02 · THE OCEAN FLOOR</div>
+          <div class="headline-wrap">
+            <div class="headline-sub">IT’S ACTUALLY AT THE BOTTOM OF</div>
+            <div class="headline-main">THE OCEAN</div>
+          </div>
+
+          <div class="visual-stage" style="position: relative; width: 840px; height: 1100px;">
+            <!-- Ocean Cross-Section (Layered Paper Cutouts) -->
+            <svg width="840" height="700" viewBox="0 0 840 700" style="filter: var(--paper-cutout-filter);">
+              <!-- Continental Shelf Left -->
+              <path d="M 0 160 L 220 160 Q 280 180 300 380 L 320 540 L 0 540 Z" fill="#C5BA9E" stroke="#AFA385" stroke-width="3"/>
+              <!-- Continental Shelf Right -->
+              <path d="M 840 190 L 640 190 Q 580 220 560 400 L 540 540 L 840 540 Z" fill="#C5BA9E" stroke="#AFA385" stroke-width="3"/>
+              
+              <!-- Ocean Water Layers -->
+              <path d="M 0 190 Q 210 170 420 190 T 840 190 L 840 540 L 0 540 Z" fill="#3182CE" opacity="0.85"/>
+              <path d="M 0 320 Q 210 300 420 320 T 840 320 L 840 540 L 0 540 Z" fill="#1A365D" opacity="0.95"/>
+              
+              <!-- Undersea Fiber Cable Running Across Floor -->
+              <path id="s2-cable-path" d="M 120 160 Q 260 200 320 500 Q 420 530 520 500 Q 560 230 720 190" 
+                    fill="none" stroke="#F6E05E" stroke-width="8" stroke-linecap="round" filter="drop-shadow(0 0 12px #ECC94B)"/>
+              
+              <!-- Moving Light Photon Pulses Along the Cable -->
+              <circle id="s2-pulse-1" r="10" fill="#FFF" filter="drop-shadow(0 0 14px #FFF)"/>
+              <circle id="s2-pulse-2" r="10" fill="#FFF" filter="drop-shadow(0 0 14px #FFF)"/>
+            </svg>
+
+            <!-- Mechanical Flip-Clock / Metric Card (Exact Match to Reference Video) -->
+            <div class="flip-counter-card">
+              <div style="font-family: 'Bebas Neue'; font-size: 34px; color: var(--text-dark); margin-bottom: 8px; letter-spacing: 0.05em;">TRANSCONTINENTAL TRAFFIC</div>
+              <div class="flip-counter-display">
+                <div class="flip-digit-tile" id="flip-d1">9</div>
+                <div class="flip-digit-tile" id="flip-d2">9</div>
+                <div class="flip-colon">%</div>
+              </div>
+              <div class="flip-labels">
+                <span>TRAVELS UNDERWATER</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SCENE 3: Cable Anatomy (Manim Style Exploded View) (18s - 32s) -->
+        <section id="scene-3" class="scene">
+          <div class="caption-pill">CHAPTER 03 · CABLE ANATOMY</div>
+          <div class="headline-wrap">
+            <div class="headline-sub">ONLY AS THICK AS A SODA CAN</div>
+            <div class="headline-main">HAIR-THIN GLASS</div>
+          </div>
+
+          <div class="visual-stage" style="position: relative; width: 840px; height: 1100px; display: flex; flex-direction: column; align-items: center;">
+            <!-- Exploded Cross-Section Diagram -->
+            <svg width="840" height="720" viewBox="0 0 840 720" style="filter: var(--paper-cutout-filter); margin-top: 10px;">
+              <!-- Concentric Armor Rings -->
+              <!-- 1. Polyethylene Outer Jacket -->
+              <circle cx="420" cy="360" r="260" fill="#2D3748" stroke="#1A202C" stroke-width="6"/>
+              <!-- 2. Mylar Tape -->
+              <circle cx="420" cy="360" r="215" fill="#E2E8F0" stroke="#CBD5E0" stroke-width="4"/>
+              <!-- 3. Steel Stranded Strength Members -->
+              <circle cx="420" cy="360" r="175" fill="#718096" stroke="#4A5568" stroke-width="5"/>
+              <!-- 4. Aluminum / Copper Power Sheath -->
+              <circle cx="420" cy="360" r="130" fill="#DD6B20" stroke="#C05621" stroke-width="5"/>
+              <!-- 5. Polycarbonate Protective Barrier -->
+              <circle cx="420" cy="360" r="95" fill="#ED8936" stroke="#DD6B20" stroke-width="4"/>
+              <!-- 6. Petroleum Jelly Water-Blocking Core -->
+              <circle cx="420" cy="360" r="65" fill="#F6E05E" stroke="#D69E2E" stroke-width="3"/>
+              
+              <!-- Core Optical Glass Fibers (Glowing Laser Core) -->
+              <circle cx="420" cy="360" r="28" fill="#FFF" filter="drop-shadow(0 0 24px #63B3ED)"/>
+              
+              <!-- Technical Pointer Labels (Manim Aesthetic) -->
+              <g id="s3-labels" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700" fill="#23201C">
+                <!-- Label 1: Polyethylene (Top Left) -->
+                <line x1="420" y1="100" x2="200" y2="60" stroke="#23201C" stroke-width="3" stroke-dasharray="6 4"/>
+                <circle cx="420" cy="100" r="5" fill="#E23D26"/>
+                <text x="30" y="55" fill="#23201C">POLYETHYLENE JACKET</text>
+
+                <!-- Label 2: Copper Sheath (Top Right) -->
+                <line x1="510" y1="270" x2="650" y2="200" stroke="#23201C" stroke-width="3" stroke-dasharray="6 4"/>
+                <circle cx="510" cy="270" r="5" fill="#E23D26"/>
+                <text x="660" y="206" fill="#C05621">COPPER (POWER)</text>
+
+                <!-- Label 3: Glass Core (Bottom Left) -->
+                <line x1="420" y1="360" x2="180" y2="520" stroke="#23201C" stroke-width="3" stroke-dasharray="6 4"/>
+                <circle cx="420" cy="360" r="6" fill="#E23D26"/>
+                <text x="20" y="550" fill="#E23D26">OPTICAL GLASS FIBERS</text>
+              </g>
+            </svg>
+
+            <!-- Stat Metric Badge -->
+            <div class="flip-counter-card" style="margin-top: 10px; width: 680px;">
+              <div style="font-family: 'JetBrains Mono'; font-size: 26px; color: var(--text-dark); font-weight: 700;">
+                SPEED OF LIGHT IN FIBER: <span style="color: #E23D26;">~200,000 KM/S</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SCENE 4: The 10,000 km Journey (32s - 45s) -->
+        <section id="scene-4" class="scene">
+          <div class="caption-pill">CHAPTER 04 · PACKET ROUTING</div>
+          <div class="headline-wrap">
+            <div class="headline-sub">NEW YORK TO TOKYO IN</div>
+            <div class="headline-main">130 MILLISECONDS</div>
+          </div>
+
+          <div class="visual-stage" style="position: relative; width: 840px; height: 1100px; display: flex; flex-direction: column; align-items: center;">
+            <!-- Animated Packet Flow -->
+            <svg width="800" height="420" viewBox="0 0 800 420" style="filter: var(--paper-cutout-filter); margin-top: 20px;">
+              <!-- Route Line Across Ocean -->
+              <path d="M 80 210 Q 400 60 720 210" fill="none" stroke="#CBD5E0" stroke-width="8" stroke-dasharray="16 12"/>
+              <path id="s4-active-route" d="M 80 210 Q 400 60 720 210" fill="none" stroke="#E23D26" stroke-width="8" stroke-linecap="round"/>
+              
+              <!-- NY Terminal -->
+              <rect x="30" y="170" width="100" height="80" rx="14" fill="#2D3748" stroke="#DFD5BD" stroke-width="4"/>
+              <text x="50" y="220" font-family="'Bebas Neue'" font-size="28" fill="#FFF">NYC</text>
+
+              <!-- Tokyo Terminal -->
+              <rect x="670" y="170" width="100" height="80" rx="14" fill="#2D3748" stroke="#DFD5BD" stroke-width="4"/>
+              <text x="690" y="220" font-family="'Bebas Neue'" font-size="28" fill="#FFF">TYO</text>
+
+              <!-- Undersea Optical Amplifier / Repeater (Every 70 km) -->
+              <g transform="translate(370, 100)">
+                <rect x="0" y="0" width="60" height="70" rx="8" fill="#D69E2E" stroke="#B7791F" stroke-width="3"/>
+                <text x="10" y="44" font-family="'JetBrains Mono'" font-size="18" font-weight="700" fill="#FFF">⚡</text>
+              </g>
+            </svg>
+
+            <!-- Flip-Clock Ping Timer (Reference Video Widget) -->
+            <div class="flip-counter-card" style="width: 620px;">
+              <div style="font-family: 'Bebas Neue'; font-size: 34px; color: var(--text-dark); margin-bottom: 8px;">ROUND TRIP LATENCY</div>
+              <div class="flip-counter-display">
+                <div class="flip-digit-tile" id="lat-d1">0</div>
+                <div class="flip-colon">:</div>
+                <div class="flip-digit-tile" id="lat-d2">1</div>
+                <div class="flip-digit-tile" id="lat-d3">3</div>
+                <div class="flip-colon">S</div>
+              </div>
+              <div class="flip-labels">
+                <span>LIGHT SPEED TRANSIT</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SCENE 5: Hazards & Cable Ships (45s - 54s) -->
+        <section id="scene-5" class="scene">
+          <div class="caption-pill">CHAPTER 05 · UNDERSEA HAZARDS</div>
+          <div class="headline-wrap">
+            <div class="headline-sub">THE GREATEST DANGER ISN’T SHARKS</div>
+            <div class="headline-main">FISHING ANCHORS</div>
+          </div>
+
+          <div class="visual-stage" style="position: relative; width: 840px; height: 1100px; display: flex; flex-direction: column; align-items: center;">
+            <svg width="800" height="650" viewBox="0 0 800 650" style="filter: var(--paper-cutout-filter);">
+              <!-- Ocean Seabed -->
+              <rect x="0" y="480" width="800" height="170" fill="#C5BA9E"/>
+              <path d="M 0 480 Q 200 460 400 480 T 800 480" fill="none" stroke="#AFA385" stroke-width="4"/>
+              
+              <!-- Cable along seabed -->
+              <line x1="0" y1="520" x2="800" y2="520" stroke="#F6E05E" stroke-width="10"/>
+
+              <!-- Fishing Trawler Boat on Surface -->
+              <g transform="translate(240, 40)">
+                <path d="M 40 80 L 260 80 L 230 140 L 80 140 Z" fill="#2B2824" stroke="#DFD5BD" stroke-width="4"/>
+                <rect x="120" y="20" width="70" height="60" fill="#FAF6EA" stroke="#2B2824" stroke-width="3"/>
+                <line x1="150" y1="20" x2="150" y2="0" stroke="#2B2824" stroke-width="4"/>
+                <circle cx="150" cy="0" r="5" fill="#E23D26"/>
+              </g>
+
+              <!-- Heavy Anchor Snagging the Cable -->
+              <g id="s5-anchor" transform="translate(370, 180)">
+                <line x1="0" y1="0" x2="40" y2="330" stroke="#718096" stroke-width="5" stroke-dasharray="10 8"/>
+                <!-- Anchor Hook -->
+                <path d="M 20 330 Q 40 370 70 330 M 40 310 L 40 360" fill="none" stroke="#2D3748" stroke-width="8" stroke-linecap="round"/>
+              </g>
+
+              <!-- Robotic Submarine (ROV) Repair Vessel -->
+              <g transform="translate(560, 420)">
+                <ellipse cx="60" cy="40" rx="60" ry="35" fill="#DD6B20" stroke="#C05621" stroke-width="4"/>
+                <circle cx="90" cy="40" r="14" fill="#FAF6EA"/>
+                <line x1="120" y1="40" x2="140" y2="50" stroke="#2D3748" stroke-width="6"/>
+                <line x1="140" y1="50" x2="135" y2="70" stroke="#2D3748" stroke-width="5"/>
+                <!-- Headlight beam -->
+                <polygon points="120,40 220,10 220,70" fill="rgba(255, 255, 200, 0.35)"/>
+              </g>
+            </svg>
+
+            <!-- Stat Badge -->
+            <div class="flip-counter-card" style="width: 680px;">
+              <div style="font-family: 'JetBrains Mono'; font-size: 26px; color: var(--text-dark); font-weight: 700;">
+                ~200 CABLE BREAKS PER YEAR GLOBALLY
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SCENE 6: Outro / The Reality (54s - 60s) -->
+        <section id="scene-6" class="scene">
+          <div class="caption-pill">CHAPTER 06 · THE REALITY</div>
+          <div class="headline-wrap">
+            <div class="headline-sub">THE CLOUD IS JUST</div>
+            <div class="headline-main">SOMEONE ELSE’S COMPUTER</div>
+            <div class="headline-sub" style="color: #E23D26; margin-top: 14px;">CONNECTED BY A WIRE.</div>
+          </div>
+
+          <div class="visual-stage" style="position: relative; width: 840px; height: 1000px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <!-- Stylized Paper Planet Earth with Undersea Fiber Web -->
+            <svg width="680" height="680" viewBox="0 0 680 680" style="filter: var(--paper-cutout-filter);">
+              <!-- Earth Circle -->
+              <circle cx="340" cy="340" r="280" fill="#2B6CB0" stroke="#2C5282" stroke-width="6"/>
+              
+              <!-- Paper Cutout Continents -->
+              <path d="M 220 180 Q 280 140 320 220 Q 280 290 200 270 Z" fill="#68D391" opacity="0.9"/>
+              <path d="M 240 320 Q 340 310 320 450 Q 240 480 220 380 Z" fill="#68D391" opacity="0.9"/>
+              <path d="M 420 180 Q 520 160 540 270 Q 460 300 400 240 Z" fill="#68D391" opacity="0.9"/>
+              
+              <!-- Global Undersea Cable Mesh Network (Glowing Web) -->
+              <g stroke="#F6E05E" stroke-width="4" fill="none" opacity="0.85">
+                <path d="M 260 220 Q 360 260 460 220" stroke-dasharray="8 6"/>
+                <path d="M 280 380 Q 380 420 480 320" stroke-dasharray="8 6"/>
+                <path d="M 260 220 Q 220 320 280 380" stroke-dasharray="8 6"/>
+                <path d="M 460 220 Q 500 290 480 320" stroke-dasharray="8 6"/>
+                <path d="M 120 340 Q 340 340 560 340" stroke-dasharray="10 8" stroke-width="5"/>
+              </g>
+
+              <!-- Node Hubs -->
+              <circle cx="260" cy="220" r="10" fill="#E23D26"/>
+              <circle cx="460" cy="220" r="10" fill="#E23D26"/>
+              <circle cx="280" cy="380" r="10" fill="#E23D26"/>
+              <circle cx="480" cy="320" r="10" fill="#E23D26"/>
+            </svg>
+
+            <!-- Flip-Clock Counter -->
+            <div class="flip-counter-card" style="margin-top: 20px; width: 680px;">
+              <div style="font-family: 'JetBrains Mono'; font-size: 32px; font-weight: 700; color: #E23D26;">
+                1,400,000+ KM OF SUBSEA CABLES
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Master Synchronized Audio -->
+  <audio id="master-audio" src="/audio/master_soundtrack.mp3" preload="auto"></audio>
+
+  <!-- Studio Interactive Controls (Hidden during headless rendering) -->
+  <div id="studio-controls">
+    <button id="btn-prev" class="ctrl-btn" title="Previous Scene">⏮</button>
+    <button id="btn-play" class="ctrl-btn" title="Play/Pause">▶</button>
+    <button id="btn-next" class="ctrl-btn" title="Next Scene">⏭</button>
+    <input type="range" id="timeline-scrubber" min="0" max="60" step="0.01" value="0">
+    <span class="timecode-display" id="timecode">00:00.00</span>
+    <span class="badge-engine" id="engine-badge">HyperFrames + Remotion</span>
+  </div>
+
+  <!-- Engine Scripts -->
+  <script src="../src/engine/timeline.js"></script>
+</body>
+</html>

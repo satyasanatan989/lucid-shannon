@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@700&family=Oswald:wght@600;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap');
+
+:root {
+  --bg-paper: #EFE8D6;
+  --bg-paper-dark: #E2DAC4;
+  --text-dark: #23201C;
+  --text-muted: #5C5549;
+  --accent-red: #E23D26;
+  --accent-blue: #2B6CB0;
+  --accent-gold: #D69E2E;
+  --paper-shadow: 0 10px 24px rgba(35, 32, 28, 0.2), 0 3px 8px rgba(35, 32, 28, 0.14);
+  --paper-shadow-lg: 0 18px 40px rgba(35, 32, 28, 0.28), 0 6px 14px rgba(35, 32, 28, 0.16);
+  --paper-cutout-filter: drop-shadow(0 8px 16px rgba(25, 20, 15, 0.22)) drop-shadow(0 2px 4px rgba(25, 20, 15, 0.12));
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+body {
+  background: #121316;
+  color: #fff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Master Video Viewport (1080 x 1920 scaled to screen) */
+#studio-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+#stage-container {
+  position: relative;
+  width: 1080px;
+  height: 1920px;
+  transform-origin: center center;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65);
+  background: var(--bg-paper);
+  overflow: hidden;
+}
+
+/* Authentic Paper Notebook Backdrop */
+.paper-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Notebook Center Crease */
+.notebook-spine {
+  position: absolute;
+  top: 0;
+  left: 540px;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.18),
+    rgba(255, 255, 255, 0.14),
+    rgba(0, 0, 0, 0.18)
+  );
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.08), 4px 0 12px rgba(0, 0, 0, 0.08);
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Notebook Binder Punched Ring Holes (Left Margin) */
+.binder-holes {
+  position: absolute;
+  top: 0;
+  left: 45px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 120px 0;
+  z-index: 6;
+  pointer-events: none;
+}
+
+.binder-hole {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #25221F;
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(255, 255, 255, 0.6);
+  position: relative;
+}
+
+.binder-hole::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 50%;
+  border: 2px solid rgba(170, 155, 130, 0.45);
+}
+
+/* Subtle Paper Texture Noise Overlay */
+.paper-noise {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.14;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 4;
+}
+
+/* Safe Zone Content Layer */
+.content-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1080px;
+  height: 1920px;
+  z-index: 10;
+}
+
+/* Scene Container */
+.scene {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1080px;
+  height: 1920px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-out;
+  padding: 180px 100px 220px 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scene.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Typography Hierarchy (Exact MeanwhileMayank / Vox Aesthetic) */
+.headline-wrap {
+  text-align: center;
+  margin-bottom: 60px;
+  width: 100%;
+}
+
+.headline-sub {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 82px;
+  letter-spacing: 0.04em;
+  color: var(--text-dark);
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.headline-main {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 142px;
+  letter-spacing: 0.03em;
+  color: var(--accent-red);
+  line-height: 0.95;
+  text-transform: uppercase;
+  margin-top: 8px;
+  filter: drop-shadow(0 4px 10px rgba(226, 61, 38, 0.25));
+}
+
+.headline-highlight {
+  color: var(--accent-red);
+}
+
+.caption-pill {
+  display: inline-block;
+  background: var(--text-dark);
+  color: #F8F5ED;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 30px;
+  padding: 12px 28px;
+  border-radius: 999px;
+  margin-bottom: 24px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: var(--paper-shadow);
+}
+
+/* Mechanical Flip-Clock / Counter Widget (From Reference Video) */
+.flip-counter-card {
+  background: #F4EEDC;
+  border: 4px solid #DFD5BD;
+  border-radius: 20px;
+  padding: 24px 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: var(--paper-shadow-lg);
+  margin-top: 30px;
+  position: relative;
+}
+
+.flip-counter-display {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.flip-digit-tile {
+  background: #FAF6EA;
+  border: 3px solid #D5C8A8;
+  border-radius: 12px;
+  width: 110px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 100px;
+  font-weight: 700;
+  color: var(--text-dark);
+  position: relative;
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.12), 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.flip-digit-tile::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.22);
+  box-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.flip-colon {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 80px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.flip-labels {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+/* Interactive Player Controls (Bottom of Studio) */
+#studio-controls {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(28, 30, 35, 0.95);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 14px 28px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.ctrl-btn {
+  background: #2D3139;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 16px;
+}
+
+.ctrl-btn:hover {
+  background: var(--accent-red);
+  transform: scale(1.08);
+}
+
+#timeline-scrubber {
+  width: 320px;
+  height: 6px;
+  accent-color: var(--accent-red);
+  cursor: pointer;
+}
+
+.timecode-display {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 15px;
+  color: #A0AEC0;
+  min-width: 110px;
+}
+
+.badge-engine {
+  background: rgba(226, 61, 38, 0.2);
+  color: #FFA596;
+  border: 1px solid rgba(226, 61, 38, 0.4);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}

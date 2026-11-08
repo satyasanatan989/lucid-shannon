@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="n_song">
+        <item quantity="other">%d lagu</item>
+    </plurals>
+    <plurals name="scrobble_plays_waiting">
+        <item quantity="other">%d putaran menunggu dikirim</item>
+    </plurals>
+    <plurals name="video_mode_seek_seconds">
+        <item quantity="other">%d detik</item>
+    </plurals>
+    <plurals name="yt_sync_undo_failed">
+        <item quantity="other">Dibatalkan, tapi %1$d suka tidak bisa dihapus dari YouTube. Coba lagi nanti.</item>
+    </plurals>
+</resources>

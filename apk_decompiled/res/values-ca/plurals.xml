@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="n_song">
+        <item quantity="other">%d cançons</item>
+        <item quantity="one">%d cançó</item>
+        <item quantity="many">%d de cançons</item>
+    </plurals>
+</resources>

@@ -1,0 +1,6 @@
+*.apk
+*.jar
+*.idsig
+node_modules/
+__pycache__/
+*.pyc

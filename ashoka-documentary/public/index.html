@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samrat Ashoka - Hinglish Documentary</title>
+  <link rel="stylesheet" href="../src/style.css">
+</head>
+<body>
+
+  <div id="studio-wrapper">
+    <div id="stage-container">
+      
+      <!-- Background Aged Parchment Canvas -->
+      <canvas id="parchment-canvas" class="parchment-canvas" width="1080" height="1920"></canvas>
+
+      <!-- Center Scroll Spine & Scorched Vignette -->
+      <div class="scroll-spine"></div>
+      <div class="scorched-border"></div>
+
+      <!-- Main Animated Content Layer -->
+      <div class="content-layer">
+
+        <!-- CHAPTER 01: The Ruthless Emperor (0s - 7s) -->
+        <section id="scene-1" class="scene active">
+          <div class="chapter-badge">⚔️ CHAPTER 01 · THE MAURYAN CONQUEROR</div>
+          <div class="headline-wrap">
+            <div class="headline-sub">2,200 YEARS AGO</div>
+            <div class="headline-main">SAMRAT ASHOKA</div>
+          </div>
+
+          <div class="visual-stage" style="position: relative; width: 900px; height: 1100px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <!-- Royal Mauryan War Elephant Silhouette Cutout -->
+            <svg id="s1-elephant" width="700" height="520" viewBox="0 0 700 520" style="filter: var(--paper-cutout); transform-origin: center center;">
+              <!-- Elephant Body -->
+              <path d="M 220 380 L 220 460 L 280 460 L 290 380 L 420 380 L 430 460 L 490 460 L 490 360 Q 560 320 580 240 Q 600 160 520 120 Q 420 80 280 100 Q 140 120 120 220 L 80 320 Q 70 380 110 390 Q 140 400 150 320 L 170 380 Z" fill="#2E241E" stroke="#CCA876" stroke-width="4"/>
+              <!-- Royal Golden Howdah / Carriage on Back -->
+              <rect x="270" y="50" width="180" height="90" rx="12" fill="#D4AF37" stroke="#9B111E" stroke-width="5"/>
+              <path d="M 250 50 Q 360 10 470 50 Z" fill="#9B111E" stroke="#D4AF37" stroke-width="3"/>
+              <!-- Imperial Pennant Flag -->
+              <line x1="360" y1="50" x2="360" y2="-10" stroke="#D4AF37" stroke-width="6"/>
+              <polygon points="360,-10 440,10 360,30" fill="#9B111E"/>
+              <!-- Royal Tusk -->
+              <path d="M 110 340 Q 60 340 40 280" fill="none" stroke="#FFFDF7" stroke-width="12" stroke-linecap="round"/>
+              <!-- Golden Ear Ornament -->
+              <circle cx="210" cy="200" r="24" fill="#D4AF37" stroke="#9B111E" stroke-width="3"/>
+            </svg>
+
+            <!-- Metric Card -->
+            <div class="ancient-metric-card" style="width: 720px; margin-top: 30px;">
+              <div class="ancient-metric-title">EMPIRE EXPANSION</div>
+              <div class="flip-row">
+                <div class="flip-tile" style="font-size: 56px; width: auto; padding: 0 24px;">AFGHANISTAN</div>
+                <div style="font-family: 'Cinzel'; font-size: 40px; color: #C69214;">➔</div>
+                <div class="flip-tile" style="font-size: 56px; width: auto; padding: 0 24px;">BENGAL</div>
+              </div>
+              <div class="ancient-metric-sub">5,000,000 SQ KM OF UNCONTESTED RULE</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CHAPTER 02: The Massacre of Kalinga (7s - 16s) -->
+        <section id="scene-2" class="scene">
+          <div class="chapter-badge" style="background: #7A0C16;">🩸 CHAPTER 02 · THE BATTLE OF KALINGA</div>
+          <div class="headline-wrap">
+            <div class="headline-sub">261 BCE · THE CARNAGE</div>
+            <div class="headline-main" style="color: #9B111E;">RIVER OF BLOOD</div>
+          </div>
+
+          <div class="visual-stage" style="position: relative; width: 900px; height: 1100px; display: flex; flex-direction: column; align-items: center;">
+            <!-- Clashing Khanda / Swords & Flying Arrows -->
+            <svg width="800" height="460" viewBox="0 0 800 460" style="filter: var(--paper-cutout); margin-top: 10px;">
+              <!-- Sword Left -->
+              <g id="s2-sword-l" transform="translate(400, 230) rotate(-45)">
+                <rect x="-14" y="-180" width="28" height="260" rx="4" fill="#E2E8F0" stroke="#2D3748" stroke-width="4"/>
+                <path d="M -14 -180 L 0 -220 L 14 -180 Z" fill="#E2E8F0" stroke="#2D3748" stroke-width="4"/>
+                <line x1="0" y1="-180" x2="0" y2="70" stroke="#CBD5E0" stroke-width="3"/>
+                <!-- Guard & Hilt -->
+                <rect x="-40" y="70" width="80" height="16" rx="6" fill="#D4AF37" stroke="#744210" stroke-width="3"/>
+                <rect x="-10" y="86" width="20" height="50" rx="4" fill="#9B111E"/>
+              </g>
+
+              <!-- Sword Right -->
+              <g id="s2-sword-r" transform="translate(400, 230) rotate(45)">
+                <rect x="-14" y="-180" width="28" height="260" rx="4" fill="#E2E8F0" stroke="#2D3748" stroke-width="4"/>
+                <path d="M -14 -180 L 0 -220 L 14 -180 Z" fill="#E2E8F0" stroke="#2D3748" stroke-width="4"/>
+                <line x1="0" y1="-180" x2="0" y2="70" stroke="#CBD5E0" stroke-width="3"/>
+                <rect x="-40" y="70" width="80" height="16" rx="6" fill="#D4AF37" stroke="#744210" stroke-width="3"/>
+                <rect x="-10" y="86" width="20" height="50" rx="4" fill="#9B111E"/>
+              </g>
+
+              <!-- Spark Particles (Clash Center) -->
+              <g id="s2-sparks">
+                <circle cx="400" cy="230" r="14" fill="#FFD700" filter="drop-shadow(0 0 16px #FF8C00)"/>
+                <line x1="400" y1="230" x2="350" y2="180" stroke="#FFD700" stroke-width="4"/>
+                <line x1="400" y1="230" x2="450" y2="170" stroke="#FF8C00" stroke-width="4"/>
+                <line x1="400" y1="230" x2="420" y2="290" stroke="#FFD700" stroke-width="4"/>
+              </g>
+
+              <!-- River Daya Turning Crimson Waves at Bottom -->
+              <path d="M 0 380 Q 200 350 400 380 T 800 380 L 800 460 L 0 460 Z" fill="#9B111E" opacity="0.95"/>
+              <path d="M 0 410 Q 200 390 400 410 T 800 410 L 800 460 L 0 460 Z" fill="#5C060E"/>
+              <text x="310" y="440" font-family="'Cinzel'" font-size="22" font-weight="700" fill="#FFEAEA" letter-spacing="0.1em">DAYA RIVER RED</text>
+            </svg>
+
+            <!-- Flip-Clock Casualty Metric -->
+            <div class="ancient-metric-card" style="width: 720px; margin-top: 20px;">
+              <div class="ancient-metric-title">KALINGA CASUALTIES</div>
+              <div class="flip-row">
+                <div class="flip-tile" id="ash-k1">1</div>
+                <div class="flip-tile" id="ash-k2">0</div>
+                <div class="flip-tile" id="ash-k3">0</div>
+                <div style="font-family: 'Cinzel'; font-size: 54px; font-weight: 700; color: #9B111E;">K+</div>
+              </div>
+              <div class="ancient-metric-sub">SLAIN IN BATTLE · 150,000 EXILED</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CHAPTER 03: The Breaking Point (16s - 24s) -->
+        <section id="scene-3" class="scene">
+          <div class="chapter-badge">💔 CHAPTER 03 · THE BREAKING POINT</div>
+          <div class="headline-wrap">
+            <div class="headline-sub">VICTORY IN BLOOD</div>
+            <div class="headline-main">THE HORROR</div>
+          </div>
+
+          <div class="visual-stage" style="position: relative; width: 900px; height: 1100px; display: flex; flex-direction: column; align-items: center;">
+            <svg width="780" height="600" viewBox="0 0 780 600" style="filter: var(--paper-cutout); margin-top: 10px;">
+              <!-- Ground with battlefield remnants -->
+              <rect x="0" y="460" width="780" height="140" fill="#3D2B22"/>
+              <line x1="0" y1="460" x2="780" y2="460" stroke="#9B111E" stroke-width="6"/>
+
+              <!-- Dropped Royal Sword Stuck in Ground -->
+              <g transform="translate(390, 360)">
+                <rect x="-10" y="-180" width="20" height="280" rx="3" fill="#E2E8F0" stroke="#2D3748" stroke-width="4"/>
+                <polygon points="-10,-180 0,-210 10,-180" fill="#E2E8F0" stroke="#2D3748" stroke-width="4"/>
+                <rect x="-35" y="70" width="70" height="14" rx="4" fill="#D4AF37"/>
+                <rect x="-8" y="84" width="16" height="40" fill="#9B111E"/>
+              </g>
+
+              <!-- Blooming Golden Lotus Rising from Ashes -->
+              <g id="s3-lotus" transform="translate(390, 430)">
+                <!-- Center Bud -->
+                <ellipse cx="0" cy="-60" rx="28" ry="46" fill="#D4AF37" stroke="#B7791F" stroke-width="3"/>
+                <!-- Petals Left & Right -->
+                <path d="M 0 -20 C -60 -40 -90 -90 -60 -130 C -40 -80 0 -50 0 -20 Z" fill="#F6E05E" stroke="#D69E2E" stroke-width="3"/>
+                <path d="M 0 -20 C 60 -40 90 -90 60 -130 C 40 -80 0 -50 0 -20 Z" fill="#F6E05E" stroke="#D69E2E" stroke-width="3"/>
+                <!-- Outer Petals -->
+                <path d="M 0 -10 C -90 -20 -130 -60 -100 -100 C -70 -50 0 -30 0 -10 Z" fill="#ECC94B" stroke="#D69E2E" stroke-width="3"/>
+                <path d="M 0 -10 C 90 -20 130 -60 100 -100 C 70 -50 0 -30 0 -10 Z" fill="#ECC94B" stroke="#D69E2E" stroke-width="3"/>
+              </g>
+            </svg>
+
+            <!-- Inscription Quote -->
+            <div class="ancient-metric-card" style="width: 740px;">
+              <div style="font-family: 'Marcellus'; font-size: 28px; font-style: italic; color: #201815; text-align: center; line-height: 1.35;">
+                "What have I done? If this is victory, what then is defeat?"
+              </div>
+              <div class="ancient-metric-sub" style="font-weight: 700; color: #9B111E; margin-top: 8px;">— ASHOKA'S KALINGA ROCK EDICT XIII</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CHAPTER 04: The Great Transformation (24s - 32s) -->
+        <section id="scene-4" class="scene">
+          <div class="chapter-badge" style="background: #C69214; color: #201815;">🪷 CHAPTER 04 · THE DHAMMA REVOLUTION</div>
+          <div class="headline-wrap">
+            <div class="headline-sub">WAR DRUMS TO DHARMA BELLS</div>
+            <div class="headline-main headline-gold">DHAMMAGHOSHA</div>
+          </div>
+
+          <div class="visual-stage" style="position: relative; width: 900px; height: 1100px; display: flex; flex-direction: column; align-items: center;">
+            <!-- Buddhist Monk Silhouette & Radiating Light Rings -->
+            <svg width="780" height="540" viewBox="0 0 780 540" style="filter: var(--paper-cutout);">
+              <!-- Radiating Compassion Circles -->
+              <circle cx="390" cy="270" r="220" fill="none" stroke="#D4AF37" stroke-width="3" opacity="0.3" stroke-dasharray="12 8"/>
+              <circle cx="390" cy="270" r="160" fill="none" stroke="#D4AF37" stroke-width="3" opacity="0.5"/>
+              <circle cx="390" cy="270" r="100" fill="rgba(212, 175, 55, 0.15)"/>
+
+              <!-- Buddhist Monk Silhouette with Robe -->
+              <g transform="translate(390, 240)">
+                <!-- Head & Halo -->
+                <circle cx="0" cy="-90" r="38" fill="#5C3B1E"/>
+                <circle cx="0" cy="-90" r="54" fill="none" stroke="#D4AF37" stroke-width="4"/>
+                <!-- Robe Body in Meditative Posture -->
+                <path d="M -70 80 Q -110 50 -60 -30 Q 0 -60 60 -30 Q 110 50 70 80 Z" fill="#C67D28" stroke="#8C4E10" stroke-width="4"/>
+                <!-- Hands in Dhyana Mudra -->
+                <ellipse cx="0" cy="40" rx="30" ry="18" fill="#D4AF37"/>
+              </g>
+            </svg>
+
+            <!-- Contrast Badge -->
+            <div class="ancient-metric-card" style="width: 720px;">
+              <div class="ancient-metric-title">ROYAL DECREE</div>
+              <div class="flip-row">
+                <div class="flip-tile" style="font-size: 40px; width: auto; padding: 0 20px; color: #718096; text-decoration: line-through;">BHERIGHOSHA</div>
+                <div style="font-family: 'Cinzel'; font-size: 36px; color: #C69214;">➔</div>
+                <div class="flip-tile" style="font-size: 40px; width: auto; padding: 0 20px; color: #2F855A;">DHAMMAGHOSHA</div>
+              </div>
+              <div class="ancient-metric-sub">REPLACING THE SOUND OF WAR WITH RIGHTEOUSNESS</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CHAPTER 05: The 24-Spoke Ashoka Chakra & Pillars (32s - 40s) -->
+        <section id="scene-5" class="scene">
+          <div class="chapter-badge">🏛️ CHAPTER 05 · THE ETERNAL SYMBOL</div>
+          <div class="headline-wrap">
+            <div class="headline-sub">THE WHEEL OF LAW</div>
+            <div class="headline-main" style="color: #002244;">ASHOKA CHAKRA</div>
+          </div>
+
+          <div class="visual-stage" style="position: relative; width: 900px; height: 1100px; display: flex; flex-direction: column; align-items: center;">
+            <!-- Mathematical 24-Spoke Ashoka Chakra (Rotating Animation) -->
+            <svg id="s5-chakra" width="620" height="620" viewBox="0 0 620 620" style="filter: var(--paper-cutout); transform-origin: center center;">
+              <!-- Outer Ring -->
+              <circle cx="310" cy="310" r="270" fill="none" stroke="#002244" stroke-width="20"/>
+              <!-- Inner Hub -->
+              <circle cx="310" cy="310" r="50" fill="#002244"/>
+              <circle cx="310" cy="310" r="24" fill="#FFFDF7"/>
+              
+              <!-- 24 Spokes (Generated Mathematically) -->
+              <g stroke="#002244" stroke-width="8" stroke-linecap="round">
+                <!-- 24 spokes at 15 deg intervals -->
+                <line x1="310" y1="310" x2="310" y2="40"/>
+                <line x1="310" y1="310" x2="310" y2="580"/>
+                <line x1="310" y1="310" x2="40" y2="310"/>
+                <line x1="310" y1="310" x2="580" y2="310"/>
+                <line x1="310" y1="310" x2="119" y2="119"/>
+                <line x1="310" y1="310" x2="501" y2="501"/>
+                <line x1="310" y1="310" x2="119" y2="501"/>
+                <line x1="310" y1="310" x2="501" y2="119"/>
+                <!-- Additional 16 spokes -->
+                <line x1="310" y1="310" x2="380" y2="49"/>
+                <line x1="310" y1="310" x2="240" y2="571"/>
+                <line x1="310" y1="310" x2="446" y2="76"/>
+                <line x1="310" y1="310" x2="174" y2="544"/>
+                <line x1="310" y1="310" x2="501" y2="174"/>
+                <line x1="310" y1="310" x2="119" y2="446"/>
+                <line x1="310" y1="310" x2="544" y2="240"/>
+                <line x1="310" y1="310" x2="76" y2="380"/>
+                <line x1="310" y1="310" x2="544" y2="380"/>
+                <line x1="310" y1="310" x2="76" y2="240"/>
+                <line x1="310" y1="310" x2="501" y2="446"/>
+                <line x1="310" y1="310" x2="119" y2="174"/>
+                <line x1="310" y1="310" x2="446" y2="544"/>
+                <line x1="310" y1="310" x2="174" y2="76"/>
+                <line x1="310" y1="310" x2="380" y2="571"/>
+                <line x1="310" y1="310" x2="240" y2="49"/>
+              </g>
+            </svg>
+
+            <!-- Stat Card -->
+            <div class="ancient-metric-card" style="width: 720px; margin-top: 20px;">
+              <div class="ancient-metric-title">SARNATH PILLAR & EDICTS</div>
+              <div class="flip-row">
+                <div class="flip-tile" style="font-size: 64px; color: #002244;">24</div>
+                <div class="flip-tile" style="font-size: 34px; width: auto; padding: 0 20px;">SPOKES OF DHARMA</div>
+              </div>
+              <div class="ancient-metric-sub">PRESERVED ON THE NATIONAL FLAG OF INDIA</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CHAPTER 06: The Legend Outro (40s - 48s) -->
+        <section id="scene-6" class="scene">
+          <div class="chapter-badge">👑 CHAPTER 06 · ETERNAL LEGACY</div>
+          <div class="headline-wrap">
+            <div class="headline-sub">THE ONLY CONQUEROR</div>
+            <div class="headline-main">ASHOKA THE GREAT</div>
+            <div class="headline-sub" style="color: #9B111E; margin-top: 14px; font-size: 40px;">WHO RENOUNCED WAR AFTER VICTORY.</div>
+          </div>
+
+          <div class="visual-stage" style="position: relative; width: 900px; height: 1000px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <!-- Sarnath Lion Capital Emblem Silhouette -->
+            <svg width="600" height="520" viewBox="0 0 600 520" style="filter: var(--paper-cutout);">
+              <!-- Sandstone Base -->
+              <rect x="140" y="440" width="320" height="50" rx="8" fill="#C4A47C" stroke="#7A562B" stroke-width="4"/>
+              <ellipse cx="300" cy="440" rx="200" ry="24" fill="#D4AF37" stroke="#7A562B" stroke-width="4"/>
+              
+              <!-- Center Emblem Ashoka Chakra -->
+              <circle cx="300" cy="420" r="32" fill="#002244"/>
+              <circle cx="300" cy="420" r="10" fill="#FFFDF7"/>
+
+              <!-- Lions Silhouette -->
+              <!-- Center Lion -->
+              <path d="M 240 180 Q 300 80 360 180 Q 400 280 360 380 L 240 380 Q 200 280 240 180 Z" fill="#B8860B" stroke="#7A562B" stroke-width="5"/>
+              <!-- Mane details -->
+              <circle cx="260" cy="180" r="30" fill="#D4AF37"/>
+              <circle cx="340" cy="180" r="30" fill="#D4AF37"/>
+              <circle cx="300" cy="150" r="28" fill="#D4AF37"/>
+              <!-- Crown -->
+              <polygon points="300,70 280,110 320,110" fill="#9B111E"/>
+              
+              <!-- Left Lion Profile -->
+              <path d="M 170 220 Q 210 140 250 220 L 250 360 L 170 360 Z" fill="#996515" stroke="#7A562B" stroke-width="4"/>
+              <!-- Right Lion Profile -->
+              <path d="M 430 220 Q 390 140 350 220 L 350 360 L 430 360 Z" fill="#996515" stroke="#7A562B" stroke-width="4"/>
+            </svg>
+
+            <!-- National Motto Badge -->
+            <div class="ancient-metric-card" style="width: 760px; margin-top: 14px; border-color: #D4AF37;">
+              <div style="font-family: 'Rozha One', 'Cinzel'; font-size: 42px; font-weight: 700; color: #9B111E; letter-spacing: 0.08em;">
+                सत्यमेव जयते
+              </div>
+              <div class="ancient-metric-sub" style="font-weight: 700; letter-spacing: 0.12em; color: #201815;">
+                "TRUTH ALONE TRIUMPHS" · 304 BCE – 232 BCE
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Studio Interactive Controls -->
+  <div id="studio-controls">
+    <button id="btn-prev" class="ctrl-btn" title="Previous Chapter">⏮</button>
+    <button id="btn-play" class="ctrl-btn" title="Play/Pause">▶</button>
+    <button id="btn-next" class="ctrl-btn" title="Next Chapter">⏭</button>
+    <input type="range" id="timeline-scrubber" min="0" max="22.31" step="0.01" value="0">
+    <span class="timecode-display" id="timecode">00:00.00</span>
+    <span class="badge-voice" id="voice-badge">IndicF5 Hinglish Voice</span>
+  </div>
+
+  <audio id="master-audio" src="../ashoka_master_soundtrack.mp3" preload="auto"></audio>
+
+  <script src="../src/engine/timeline.js"></script>
+</body>
+</html>

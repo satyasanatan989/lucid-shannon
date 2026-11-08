@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_gravity="center" android:id="@android:id/background" android:background="@drawable/widget_background" android:layout_width="wrap_content" android:layout_height="wrap_content" android:clipToOutline="true">
+        <ImageView android:id="@id/widget_sizer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/widget_square_sizer" android:adjustViewBounds="true" android:importantForAccessibility="no" />
+        <ImageView android:id="@id/widget_backdrop" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" android:layout_alignTop="@id/widget_sizer" android:layout_alignBottom="@id/widget_sizer" android:importantForAccessibility="no" android:layout_alignStart="@id/widget_sizer" android:layout_alignEnd="@id/widget_sizer" />
+        <LinearLayout android:orientation="vertical" android:id="@id/widget_body" android:padding="14.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_alignTop="@id/widget_sizer" android:layout_alignBottom="@id/widget_sizer" android:layout_alignStart="@id/widget_sizer" android:layout_alignEnd="@id/widget_sizer">
+            <TextView android:textSize="10.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/widget_brand" android:alpha="0.8" android:fontFamily="monospace" android:letterSpacing="0.1" />
+            <LinearLayout android:gravity="bottom" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <TextView android:textSize="15.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:ellipsize="end" android:id="@id/widget_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/widget_nothing_playing" android:maxLines="2" android:textDirection="locale" />
+                <TextView android:textSize="11.0sp" android:textColor="#ccffffff" android:ellipsize="end" android:id="@id/widget_subtitle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" android:textDirection="locale" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:layoutDirection="ltr">
+                <ImageView android:id="@id/widget_next" android:background="?android:selectableItemBackgroundBorderless" android:padding="6.0dip" android:layout_width="36.0dip" android:layout_height="36.0dip" android:src="@drawable/media3_icon_next" android:tint="#ffffffff" android:contentDescription="@string/notification_next" android:alpha="0.85" android:layout_marginStart="-6.0dip" />
+                <FrameLayout android:layout_width="0.0dip" android:layout_height="1.0dip" android:layout_weight="1.0" />
+                <include layout="@layout/widget_play_button" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>

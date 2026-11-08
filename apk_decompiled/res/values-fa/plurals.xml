@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="n_song">
+        <item quantity="other">%d ترانه‌ها</item>
+        <item quantity="one">%d ترانه</item>
+    </plurals>
+</resources>

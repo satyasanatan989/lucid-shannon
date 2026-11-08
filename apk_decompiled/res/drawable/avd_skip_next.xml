@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector android:drawable="@drawable/$avd_skip_next__0"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt">
+    <target android:name="right_triangle_group" android:animation="@drawable/$avd_skip_next__1" />
+    <target android:name="right_triangle_path" android:animation="@drawable/$avd_skip_next__2" />
+    <target android:name="middle_triangle_group" android:animation="@drawable/$avd_skip_next__3" />
+    <target android:name="middle_triangle_path" android:animation="@drawable/$avd_skip_next__4" />
+</animated-vector>

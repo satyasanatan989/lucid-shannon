@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="n_song">
+        <item quantity="other">%d songs</item>
+        <item quantity="zero">%d songs</item>
+        <item quantity="one">%d song</item>
+        <item quantity="two">%d songs</item>
+        <item quantity="few">%d songs</item>
+        <item quantity="many">%d songs</item>
+    </plurals>
+    <plurals name="scrobble_plays_waiting">
+        <item quantity="other">%d plays waiting to send</item>
+        <item quantity="zero">%d plays waiting to send</item>
+        <item quantity="one">%d play waiting to send</item>
+        <item quantity="two">%d plays waiting to send</item>
+        <item quantity="few">%d plays waiting to send</item>
+        <item quantity="many">%d plays waiting to send</item>
+    </plurals>
+    <plurals name="video_mode_seek_seconds">
+        <item quantity="other">%d seconds</item>
+        <item quantity="zero">%d seconds</item>
+        <item quantity="one">%d second</item>
+        <item quantity="two">%d seconds</item>
+        <item quantity="few">%d seconds</item>
+        <item quantity="many">%d seconds</item>
+    </plurals>
+    <plurals name="yt_sync_undo_failed">
+        <item quantity="other">"Undone, but %1$d likes couldn't come off YouTube. Try again later."</item>
+        <item quantity="zero">"Undone, but %1$d likes couldn't come off YouTube. Try again later."</item>
+        <item quantity="one">"Undone, but 1 like couldn't come off YouTube. Try again later."</item>
+        <item quantity="two">"Undone, but %1$d likes couldn't come off YouTube. Try again later."</item>
+        <item quantity="few">"Undone, but %1$d likes couldn't come off YouTube. Try again later."</item>
+        <item quantity="many">"Undone, but %1$d likes couldn't come off YouTube. Try again later."</item>
+    </plurals>
+</resources>

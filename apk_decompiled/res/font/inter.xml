@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <font android:font="@font/inter_thin" android:fontWeight="100" android:fontStyle="normal" app:font="@font/inter_thin" app:fontStyle="normal" app:fontWeight="100" />
+    <font android:font="@font/inter_extralight" android:fontWeight="200" android:fontStyle="normal" app:font="@font/inter_extralight" app:fontStyle="normal" app:fontWeight="200" />
+    <font android:font="@font/inter_light" android:fontWeight="300" android:fontStyle="normal" app:font="@font/inter_light" app:fontStyle="normal" app:fontWeight="300" />
+    <font android:font="@font/inter_regular" android:fontWeight="400" android:fontStyle="normal" app:font="@font/inter_regular" app:fontStyle="normal" app:fontWeight="400" />
+    <font android:font="@font/inter_medium" android:fontWeight="500" android:fontStyle="normal" app:font="@font/inter_medium" app:fontStyle="normal" app:fontWeight="500" />
+    <font android:font="@font/inter_semibold" android:fontWeight="600" android:fontStyle="normal" app:font="@font/inter_semibold" app:fontStyle="normal" app:fontWeight="600" />
+    <font android:font="@font/inter_bold" android:fontWeight="700" android:fontStyle="normal" app:font="@font/inter_bold" app:fontStyle="normal" app:fontWeight="700" />
+</font-family>

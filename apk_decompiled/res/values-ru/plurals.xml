@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="n_song">
+        <item quantity="other">%d композиций</item>
+        <item quantity="one">%d композиция</item>
+        <item quantity="few">%d композиции</item>
+        <item quantity="many">%d композиций</item>
+    </plurals>
+</resources>

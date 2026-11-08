@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Aura Music - Stylized Audiophile "A" Waveform Mark -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M32,74 L32,46 C32,43 35,43 35,46 L35,74 C35,77 32,77 32,74 Z" />
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="6"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M34,74 L54,26 L74,74" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M52,62 L52,38 C52,35 56,35 56,38 L56,62 C56,65 52,65 52,62 Z" />
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="5"
+        android:strokeLineCap="round"
+        android:pathData="M42,58 L66,58" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M73,74 L73,46 C73,43 76,43 76,46 L76,74 C76,77 73,77 73,74 Z" />
+</vector>

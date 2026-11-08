@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="allows_for_sync_witch_youtube">Note: Sa paramet la permet senkronizasyon ek YouTube Music. Ou PA pu resi resanze li apre.</string>
+    <string name="already_in_playlist">Deza dan playlist:</string>
+    <string name="cached_playlist">Inn cache</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete_playlist_desc">Retir sa playlist la net</string>
+    <string name="dislike_all">Dislike tou</string>
+    <string name="like_all">Like tou</string>
+    <string name="liked">Inn Like</string>
+    <string name="link_copied">Link inn kopié dan clipboard</string>
+    <string name="more_options">Plis opsyon</string>
+    <string name="my_top">Mo top</string>
+    <string name="offline">Inn Download</string>
+    <string name="proxy">Proxy</string>
+    <string name="remove_from_cache">Tir dan cache</string>
+    <string name="select">Selekté tou</string>
+    <string name="share_playlist_desc">Partaz sa playlist la ek lezot</string>
+    <string name="sort_by_last_updated">Dat miz-azour</string>
+    <string name="sync_disabled">Senkronizasyon dezaktivé</string>
+    <string name="sync_playlist">Senkroniz playlist</string>
+    <string name="sync_playlist_desc">Senkroniz playlist ek Youtube Music</string>
+    <string name="uploaded_playlist">Inn upload</string>
+</resources>

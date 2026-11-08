@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="36" android:compileSdkVersionCodename="16" package="com.mochyy.mochymusic" platformBuildVersionCode="36" platformBuildVersionName="16">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
+    <uses-permission android:maxSdkVersion="30" android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:maxSdkVersion="30" android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO"/>
+    <uses-permission android:maxSdkVersion="32" android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-feature android:name="android.hardware.microphone" android:required="false"/>
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+    <uses-feature android:name="android.software.leanback" android:required="false"/>
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <queries>
+        <intent>
+            <action android:name="android.media.action.DISPLAY_AUDIO_EFFECT_CONTROL_PANEL"/>
+        </intent>
+        <intent>
+            <action android:name="com.mochyy.mochymusic.SOURCE_MODULE"/>
+        </intent>
+        <package android:name="com.instagram.android"/>
+        <package android:name="com.whatsapp"/>
+        <package android:name="com.whatsapp.w4b"/>
+        <package android:name="com.facebook.katana"/>
+    </queries>
+    <permission android:name="com.mochyy.mochymusic.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.mochyy.mochymusic.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
+    <application android:allowBackup="true" android:appCategory="audio" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:banner="@mipmap/tv_banner" android:dataExtractionRules="@xml/data_extraction_rules" android:enableOnBackInvokedCallback="true" android:extractNativeLibs="false" android:fullBackupContent="@xml/backup_rules" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:localeConfig="@xml/_generated_res_locale_config" android:name="com.mochyy.mochymusic.App" android:networkSecurityConfig="@xml/network_security_config" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="false" android:theme="@style/Theme.mochy">
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.mochyy.mochymusic.ui.screens.CrashActivity" android:process=":crash" android:screenOrientation="portrait" android:theme="@style/Theme.mochy"/>
+        <activity android:exported="true" android:launchMode="singleTask" android:name="com.mochyy.mochymusic.MainActivity" android:screenOrientation="portrait" android:theme="@style/Theme.App.Starting" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.intent.action.MUSIC_PLAYER"/>
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER"/>
+                <category android:name="android.intent.category.APP_MUSIC"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.media.action.MEDIA_PLAY_FROM_SEARCH"/>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+                <data android:host="youtube.com"/>
+                <data android:host="m.youtube.com"/>
+                <data android:host="www.youtube.com"/>
+                <data android:host="music.youtube.com"/>
+                <data android:pathPrefix="/v/"/>
+                <data android:pathPrefix="/embed/"/>
+                <data android:pathPrefix="/watch"/>
+                <data android:pathPrefix="/channel/"/>
+                <data android:pathPrefix="/user/"/>
+                <data android:pathPrefix="/c/"/>
+                <data android:pathPrefix="/playlist"/>
+                <data android:pathPrefix="/browse/"/>
+                <data android:pathPrefix="/search"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.media.action.MEDIA_PLAY_FROM_SEARCH"/>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+                <data android:host="youtu.be"/>
+                <data android:pathPrefix="/"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.media.action.MEDIA_PLAY_FROM_SEARCH"/>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="vnd.youtube"/>
+                <data android:scheme="vnd.youtube.launch"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <action android:name="android.intent.action.SEND_MULTIPLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="audio/*"/>
+                <data android:mimeType="application/ogg"/>
+            </intent-filter>
+        </activity>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_anime_custom_cream" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconAnimeCream" android:roundIcon="@mipmap/app_icon_anime_custom_cream" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_anime_custom_graphite" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconAnimeGraphite" android:roundIcon="@mipmap/app_icon_anime_custom_graphite" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_anime_custom_pink" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconAnimePink" android:roundIcon="@mipmap/app_icon_anime_custom_pink" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_anime_custom_purple" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconAnimePurple" android:roundIcon="@mipmap/app_icon_anime_custom_purple" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_anime_custom_indigo" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconAnimeIndigo" android:roundIcon="@mipmap/app_icon_anime_custom_indigo" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_anime_custom_blue" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconAnimeBlue" android:roundIcon="@mipmap/app_icon_anime_custom_blue" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_anime_custom_sky" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconAnimeSky" android:roundIcon="@mipmap/app_icon_anime_custom_sky" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_anime_custom_teal" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconAnimeTeal" android:roundIcon="@mipmap/app_icon_anime_custom_teal" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_anime_custom_green" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconAnimeGreen" android:roundIcon="@mipmap/app_icon_anime_custom_green" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_anime_custom_yellow" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconAnimeYellow" android:roundIcon="@mipmap/app_icon_anime_custom_yellow" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_anime_custom_orange" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconAnimeOrange" android:roundIcon="@mipmap/app_icon_anime_custom_orange" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_anime_custom_red" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconAnimeRed" android:roundIcon="@mipmap/app_icon_anime_custom_red" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_outline_custom_cream" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconOutlineCream" android:roundIcon="@mipmap/app_icon_outline_custom_cream" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_outline_custom_graphite" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconOutlineGraphite" android:roundIcon="@mipmap/app_icon_outline_custom_graphite" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_outline_custom_pink" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconOutlinePink" android:roundIcon="@mipmap/app_icon_outline_custom_pink" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_outline_custom_purple" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconOutlinePurple" android:roundIcon="@mipmap/app_icon_outline_custom_purple" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_outline_custom_indigo" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconOutlineIndigo" android:roundIcon="@mipmap/app_icon_outline_custom_indigo" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_outline_custom_blue" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconOutlineBlue" android:roundIcon="@mipmap/app_icon_outline_custom_blue" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_outline_custom_sky" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconOutlineSky" android:roundIcon="@mipmap/app_icon_outline_custom_sky" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_outline_custom_teal" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconOutlineTeal" android:roundIcon="@mipmap/app_icon_outline_custom_teal" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_outline_custom_green" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconOutlineGreen" android:roundIcon="@mipmap/app_icon_outline_custom_green" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_outline_custom_yellow" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconOutlineYellow" android:roundIcon="@mipmap/app_icon_outline_custom_yellow" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_outline_custom_orange" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconOutlineOrange" android:roundIcon="@mipmap/app_icon_outline_custom_orange" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_outline_custom_red" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconOutlineRed" android:roundIcon="@mipmap/app_icon_outline_custom_red" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_mark_custom_cream" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconMarkCream" android:roundIcon="@mipmap/app_icon_mark_custom_cream" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_mark_custom_graphite" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconMarkGraphite" android:roundIcon="@mipmap/app_icon_mark_custom_graphite" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_mark_custom_pink" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconMarkPink" android:roundIcon="@mipmap/app_icon_mark_custom_pink" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_mark_custom_purple" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconMarkPurple" android:roundIcon="@mipmap/app_icon_mark_custom_purple" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_mark_custom_indigo" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconMarkIndigo" android:roundIcon="@mipmap/app_icon_mark_custom_indigo" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_mark_custom_blue" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconMarkBlue" android:roundIcon="@mipmap/app_icon_mark_custom_blue" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_mark_custom_sky" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconMarkSky" android:roundIcon="@mipmap/app_icon_mark_custom_sky" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_mark_custom_teal" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconMarkTeal" android:roundIcon="@mipmap/app_icon_mark_custom_teal" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_mark_custom_green" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconMarkGreen" android:roundIcon="@mipmap/app_icon_mark_custom_green" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_mark_custom_yellow" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconMarkYellow" android:roundIcon="@mipmap/app_icon_mark_custom_yellow" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_mark_custom_orange" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconMarkOrange" android:roundIcon="@mipmap/app_icon_mark_custom_orange" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_mark_custom_red" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconMarkRed" android:roundIcon="@mipmap/app_icon_mark_custom_red" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_anime_transparent" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconAnimeTransparent" android:roundIcon="@mipmap/app_icon_anime_transparent" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_anime_material" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconAnimeMaterial" android:roundIcon="@mipmap/app_icon_anime_material" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_anime_dark" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconAnimeDark" android:roundIcon="@mipmap/app_icon_anime_dark" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_anime_white" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconAnimeWhite" android:roundIcon="@mipmap/app_icon_anime_white" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_outline_transparent" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconOutlineTransparent" android:roundIcon="@mipmap/app_icon_outline_transparent" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_outline_material" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconOutlineMaterial" android:roundIcon="@mipmap/app_icon_outline_material" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_outline_black" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconOutlineBlack" android:roundIcon="@mipmap/app_icon_outline_black" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_outline_white" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconOutlineWhite" android:roundIcon="@mipmap/app_icon_outline_white" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_outline" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconOutline" android:roundIcon="@mipmap/app_icon_outline" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_mark_transparent" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconMarkTransparent" android:roundIcon="@mipmap/app_icon_mark_transparent" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_mark_material" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconMarkMaterial" android:roundIcon="@mipmap/app_icon_mark_material" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_mark_black" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconMarkBlack" android:roundIcon="@mipmap/app_icon_mark_black" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/app_icon_mark_white" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconMarkWhite" android:roundIcon="@mipmap/app_icon_mark_white" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <activity-alias android:enabled="true" android:exported="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:name="com.mochyy.mochymusic.IconDefault" android:roundIcon="@mipmap/ic_launcher_round" android:targetActivity="com.mochyy.mochymusic.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity-alias>
+        <provider android:authorities="com.mochyy.mochymusic.FileProvider" android:exported="false" android:grantUriPermissions="true" android:name="androidx.core.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths"/>
+        </provider>
+        <provider android:authorities="com.mochyy.mochymusic.com.dpi.DensityScaler" android:enabled="true" android:exported="false" android:name="com.dpi.DensityScaler"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:launchMode="singleTask" android:name="com.mochyy.mochymusic.discord.DiscordLoginActivity" android:noHistory="true" android:taskAffinity="" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="discord-1562099676591947876"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:name="com.yalantis.ucrop.UCropActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <service android:exported="true" android:foregroundServiceType="mediaPlayback" android:name="com.mochyy.mochymusic.playback.MusicService">
+            <intent-filter>
+                <action android:name="androidx.media3.session.MediaSessionService"/>
+                <action android:name="androidx.media3.session.MediaLibraryService"/>
+                <action android:name="android.media.browse.MediaBrowserService"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:foregroundServiceType="dataSync" android:name="com.mochyy.mochymusic.playback.ExoDownloadService">
+            <intent-filter>
+                <action android:name="androidx.media3.exoplayer.downloadService.action.RESTART"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="true" android:name="androidx.media3.session.MediaButtonReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.google.android.gms.car.application" android:resource="@xml/automotive_app_desc"/>
+        <receiver android:exported="true" android:label="@string/widget_music_player" android:name="com.mochyy.mochymusic.widget.MusicWidgetReceiver">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="com.mochyy.mochymusic.widget.PLAY_PAUSE"/>
+                <action android:name="com.mochyy.mochymusic.widget.LIKE"/>
+                <action android:name="com.mochyy.mochymusic.widget.UPDATE_WIDGET"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/music_widget_info"/>
+        </receiver>
+        <receiver android:exported="true" android:label="@string/widget_turntable" android:name="com.mochyy.mochymusic.widget.TurntableWidgetReceiver">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="com.mochyy.mochymusic.widget.TURNTABLE_PLAY_PAUSE"/>
+                <action android:name="com.mochyy.mochymusic.widget.TURNTABLE_LIKE"/>
+                <action android:name="com.mochyy.mochymusic.widget.UPDATE_TURNTABLE_WIDGET"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/turntable_widget_info"/>
+        </receiver>
+        <provider android:authorities="com.mochyy.mochymusic.androidx-startup" android:exported="false" android:name="androidx.startup.InitializationProvider">
+            <meta-data android:name="androidx.work.WorkManagerInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.emoji2.text.EmojiCompatInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.profileinstaller.ProfileInstallerInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="okhttp3.internal.platform.PlatformInitializer" android:value="androidx.startup"/>
+        </provider>
+        <service android:directBootAware="false" android:enabled="@bool/enable_system_alarm_service_default" android:exported="false" android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"/>
+        <service android:directBootAware="false" android:enabled="@bool/enable_system_job_service_default" android:exported="true" android:name="androidx.work.impl.background.systemjob.SystemJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:directBootAware="false" android:enabled="@bool/enable_system_foreground_service_default" android:exported="false" android:name="androidx.work.impl.foreground.SystemForegroundService"/>
+        <receiver android:directBootAware="false" android:enabled="true" android:exported="false" android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"/>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy">
+            <intent-filter>
+                <action android:name="android.intent.action.BATTERY_OKAY"/>
+                <action android:name="android.intent.action.BATTERY_LOW"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy">
+            <intent-filter>
+                <action android:name="android.intent.action.DEVICE_STORAGE_LOW"/>
+                <action android:name="android.intent.action.DEVICE_STORAGE_OK"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.TIME_SET"/>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="@bool/enable_system_alarm_service_default" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver">
+            <intent-filter>
+                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="true" android:exported="true" android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver" android:permission="android.permission.DUMP">
+            <intent-filter>
+                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS"/>
+            </intent-filter>
+        </receiver>
+        <uses-library android:name="androidx.window.extensions" android:required="false"/>
+        <uses-library android:name="androidx.window.sidecar" android:required="false"/>
+        <receiver android:directBootAware="false" android:enabled="true" android:exported="true" android:name="androidx.profileinstaller.ProfileInstallReceiver" android:permission="android.permission.DUMP">
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.SKIP_FILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION"/>
+            </intent-filter>
+        </receiver>
+        <service android:directBootAware="true" android:exported="false" android:name="androidx.room.MultiInstanceInvalidationService"/>
+    </application>
+</manifest>

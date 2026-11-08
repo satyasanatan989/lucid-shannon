@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@android:id/background" android:background="@drawable/widget_background" android:layout_width="fill_parent" android:layout_height="fill_parent" android:clipToOutline="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/widget_card" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/widget_fill" android:scaleType="fitXY" android:tint="@color/widget_card_fallback" android:importantForAccessibility="no" />
+    <FrameLayout android:layout_gravity="right" android:layout_width="wrap_content" android:layout_height="fill_parent">
+        <ImageView android:id="@id/widget_art" android:layout_width="196.0dip" android:layout_height="fill_parent" android:scaleType="centerCrop" android:importantForAccessibility="no" />
+        <ImageView android:id="@id/widget_art_fade" android:layout_width="112.0dip" android:layout_height="fill_parent" android:scaleType="fitXY" android:importantForAccessibility="no" />
+    </FrameLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/widget_body" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layoutDirection="ltr">
+        <LinearLayout android:orientation="vertical" android:paddingTop="16.0dip" android:paddingBottom="10.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" android:layoutDirection="locale" android:paddingStart="16.0dip" android:paddingEnd="8.0dip">
+            <TextView android:textSize="18.0sp" android:textStyle="bold" android:textColor="#ffffe9df" android:ellipsize="end" android:id="@id/widget_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/widget_nothing_playing" android:maxLines="3" android:textDirection="locale" />
+            <TextView android:textSize="13.0sp" android:textColor="#fff0b9a6" android:ellipsize="end" android:id="@id/widget_subtitle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:maxLines="1" android:textDirection="locale" />
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layoutDirection="ltr" android:layout_marginStart="-10.0dip">
+                <ImageView android:id="@id/widget_prev" android:background="?android:selectableItemBackgroundBorderless" android:padding="10.0dip" android:layout_width="44.0dip" android:layout_height="44.0dip" android:src="@drawable/media3_icon_previous" android:tint="#ffffe9df" android:contentDescription="@string/notification_previous" />
+                <include layout="@layout/widget_play_button" />
+                <ImageView android:id="@id/widget_next" android:background="?android:selectableItemBackgroundBorderless" android:padding="10.0dip" android:layout_width="44.0dip" android:layout_height="44.0dip" android:src="@drawable/media3_icon_next" android:tint="#ffffe9df" android:contentDescription="@string/notification_next" />
+            </LinearLayout>
+        </LinearLayout>
+        <FrameLayout android:id="@id/widget_art_space" android:layout_width="116.0dip" android:layout_height="fill_parent" />
+    </LinearLayout>
+</FrameLayout>
