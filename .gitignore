@@ -4,3 +4,9 @@
 node_modules/
 __pycache__/
 *.pyc
+hyperframes/
+vork/
+cinecode/
+claude-code-video-toolkit/
+maida-indigestion-explainer/
+preview_reference/
